@@ -6,9 +6,9 @@ public class Main {
 		
 		int [] vetor = new int [10];
 		
-		//Preenchendo o vetor com numeros aleatórios
+		//Preenchendo o vetor com numeros aleatÃ³rios
 		for(int i = 0; i < vetor.length; i++) {
-			vetor [i] = (int) (Math.random() * vetor.length); // preencher de 1 até 10
+			vetor [i] = (int) (Math.random() * vetor.length); // preencher de 1 atÃ© 10
 			System.out.println(vetor [i]);
 		}
 		

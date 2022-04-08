@@ -1,56 +1,38 @@
+import java.util.Arrays;
+
 public class Main {
-	
-	public static int []  selectionSort  (int [] array ) {
-		int posicaoMenor;
-		int aux;
-		for(int i=array.length -1;i>=0;i-- ) {
-			posicaoMenor=i;
-			for(int j = array.length - 2; j >= 0; j--) {
-				if(array[j]<array[posicaoMenor]) {
-					posicaoMenor=j;
-				}
-			}
-			
-			aux=array[i];
-			array[i]=array[posicaoMenor];
-			array[posicaoMenor]=aux;
-			
-			if( i==4) {
-				for(int r = 0; r<array.length;r++) {
-					System.out.println(array[r]);
-				}
-			}
-			
-			
-		}
-		
-		
-		
-		return array;
-	}
 
 	public static void main(String[] args) {
-	
 		
-		int vetor [] = {15, 11, 16, 18, 23, 5, 10, 22, 21, 12};
+		int [] vetor = new int [10];
 		
-		
-		System.out.println("Desordenado: ");
-		for(int i = 0;i<vetor.length;i++) {
-			System.out.println(vetor[i]);
-			System.out.println();
+		//Preenchendo o vetor com numeros aleatórios
+		for(int i = 0; i < vetor.length; i++) {
+			vetor [i] = (int) (Math.random() * vetor.length); // preencher de 1 até 10
+			System.out.println(vetor [i]);
 		}
 		
+		System.out.println();
 		
-		selectionSort(vetor);
-		
-	
-		System.out.println("Ordenado: ");
-		for(int i = 0;i<vetor.length;i++) {
-			System.out.println(vetor[i]);
+		int aux , j;
+		// i nao precisa iniciar com 0 pq vetor tamanho 1 ja esta ordenado
+		for(int i = 1; i < vetor.length; i++) {
+			aux = vetor [i];
+			j = i - 1;
+			while(j >= 0 && vetor[j] > aux) {
+				vetor[j + 1] = vetor[j];
+				j--;
+			}
 			
+			vetor[j + 1] = aux;
+		
 		}
 		
+		
+		for(int i = 0; i < vetor.length; i++) {
+			
+			System.out.println(vetor [i]);
+		}
 		
 		
 		
@@ -58,5 +40,3 @@ public class Main {
 	}
 
 }
-
-
